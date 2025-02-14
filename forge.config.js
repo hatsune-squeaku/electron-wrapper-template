@@ -50,7 +50,7 @@ module.exports = {
     {
         name: "@electron-forge/maker-dmg",
         config: {
-          icon: '/Users/sydney/Documents/Twine games/assets/Qualia Client Icon.ico',
+          icon: '/Users/runner/work/qualia/qualia/app/icons/icon.ico',
           format: 'ULFO'
         },
         platforms: ["darwin"]
