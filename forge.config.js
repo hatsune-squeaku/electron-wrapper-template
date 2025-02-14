@@ -48,13 +48,9 @@ module.exports = {
         }
     },
     {
-        name: "@electron-forge/maker-dmg",
-        config: {
-          icon: '/Users/runner/work/qualia/qualia/app/icons/icon.ico',
-          format: 'ULFO'
-        },
+        name: "@electron-forge/maker-zip",
         platforms: ["darwin"]
-      },
+    },
     {
         name: "@electron-forge/maker-deb",
         config: {}
