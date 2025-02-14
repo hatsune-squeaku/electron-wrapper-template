@@ -48,9 +48,13 @@ module.exports = {
         }
     },
     {
-        name: "@electron-forge/maker-zip",
+        name: '@electron-forge/maker-dmg',
+        config: {
+          icon: '/Users/sydney/Documents/Twine games/assets/Qualia Client Icon.ico',
+          format: 'ULFO'
+        },
         platforms: ["darwin"]
-    },
+      }
     {
         name: "@electron-forge/maker-deb",
         config: {}
