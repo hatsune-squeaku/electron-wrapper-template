@@ -41,7 +41,7 @@ module.exports = {
     makers: [
     {
         name: "@electron-forge/maker-zip",
-        platforms: ["windows"]
+        platforms: ["win32"]
     },
     {
         name: "@electron-forge/maker-deb",
