@@ -12,15 +12,24 @@ const createWindow = () => {
     width: 1280,
     height: 960,
     fullscreenable: false,
-    frame: false,
     menuBarVisible: false,
     webPreferences: {
       devTools: false
     }
   });
+  mainWindow.setMenu(null);
   mainWindow.setAspectRatio(4/3);
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
+
+  mainWindow.on('enter-html-full-screen', () => {
+    if (mainWindow.isFullScreen()) {
+      setTimeout(() => {
+        mainWindow.setFullScreen(false);
+        mainWindow.maximize();
+      }, 500);
+    }
+  })
 };
 
 // This method will be called when Electron has finished
@@ -38,9 +47,7 @@ app.on('resize', function () {
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
+  app.quit();
 });
 
 app.on('activate', () => {
